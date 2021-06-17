@@ -61,10 +61,8 @@ async function localLoginFn(){
 function init(){
     const urlSearch = new URLSearchParams(location.search);
     const msg = urlSearch.get('msg')
-    const loginBtn = document.querySelector('.loginSubmit')
     layerPopup = document.querySelector('.layerPopup')
     const localLogin = document.querySelector('#localLogin')
-    loginBtn.addEventListener('click',loginBtnFn)
     layerPopup.addEventListener('click', popupClose)
     localLogin.addEventListener('click',localLoginFn)
 

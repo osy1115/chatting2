@@ -1,7 +1,10 @@
 const chatBtn = document.querySelector('#chatBtn');
 const chatRoom = document.querySelector('#chatRoom');
+const chatSend = document.querySelector('#chatSend')
 let socket = io();
 let flag = undefined;
+
+
 
 chatBtn.addEventListener('click', ()=>{
     switch(flag){
@@ -53,19 +56,20 @@ function socketChat(){
 
 function send(){
     const msg = document.querySelector('#msg');
-    console.log(msg.value);
     socket.emit('send',msg.value);
     addCard(msg.value,'my')
 }
 
-function addCard(){
+
+
+function addCard(text,type){
     const div = document.createElement('div');
     const span = document.createElement('span');
-    const chat = document.querySelector('#chat');
-
-    span.innerHTML = text;
+    
+    span.innerHTML += text;
     span.classList.add(type);
     div.appendChild(span);
+    const chat = document.querySelector('#chat');
     chat.appendChild(div);
 }
 

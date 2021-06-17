@@ -3,6 +3,10 @@
     padding:0;
 }
 
+#chatBtn{
+    
+}
+
 .layerPopup{
     display:none;
     position:fixed;

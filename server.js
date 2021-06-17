@@ -40,9 +40,6 @@ app.get('/', (req,res)=>{
 })
 
 
-app.get('/chat',auth, (req,res)=>{
-    res.render('chat.html')
-})
 app.get('/user/join',(req,res)=>{
     res.render('join')
 })
@@ -97,6 +94,12 @@ app.post('/auth/local/login',async (req,res)=>{
     res.json(result)
 })
 
+app.get('/chat',auth, (req,res)=>{
+    res.render('chat.html')
+})
+
+let id;
+
 io.sockets.on('connection',socket=>{
     let cookieString = socket.handshake.headers.cookie;
 
@@ -112,6 +115,8 @@ io.sockets.on('connection',socket=>{
             }
         })
     }
+    console.log(id)
+
     socket.on('send',data => {
         console.log(data);
         socket.broadcast.emit('msg',data)

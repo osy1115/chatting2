@@ -2,6 +2,8 @@
     width:400px;
     height:600px;
     background:wheat;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 #chat > div > span{
@@ -16,12 +18,12 @@
 }
 
 #chat > div > span.my{
-    float:left;
+    float:right;
     background:yellow;
 }
 
 #chat > div > span.you{
-    float:right;
+    float:left;
     background:white;
 }
 

@@ -5,10 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link href="/css/chat.css" rel="stylesheet" >
+    <link href="/css/index.css" rel="stylesheet" >
+    <script src="https://kit.fontawesome.com/078626b505.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <button id="chatBtn" data-value = "0">채팅</button>
+    <i class="fas fa-headset"></i>
+    <div id="chatRoom">
+
+    </div>
     <div class="layerPopup">
         <div class="loginPopup">
             <div id="loginForm">
@@ -20,10 +28,6 @@
                     아직도 회원이 아니세요?
                     <span class="joinBtn" onclick = "location.href = '/user/join'">회원가입</span>
                 </p>
-                <button id="chatBtn" data-value = "0">채팅</button>
-                <div id="chatRoom">
-            
-                </div>
             </div>
         </div>
     </div>
